@@ -11,8 +11,7 @@ object Require {
         infix fun inRange(range: IntRange) = if (stat in range) {
             stat
         } else {
-            throw InvalidStatValueException(
-              "'$name'($stat must be in range $range")
+            throw InvalidStatValueException("'$name'($stat must be in range $range")
         }
     }
 }
