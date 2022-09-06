@@ -12,7 +12,7 @@ import java.util.*
 import java.util.concurrent.BlockingQueue
 
 /**
- * A `Thief` is a type of Player Character that can equip `Sword`s, `Knife`s and `Bow`s.
+ * A `Thief` is a type of [PlayerCharacter] that can equip `Sword`s, `Knife`s and `Bow`s.
  *
  * @param name        the character's name
  * @param maxHp       the character's maximum health points
