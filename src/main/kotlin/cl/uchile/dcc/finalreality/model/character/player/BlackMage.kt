@@ -29,11 +29,11 @@ import java.util.concurrent.BlockingQueue
  * @author ~Your name~
  */
 class BlackMage(
-  name: String,
-  maxHp: Int,
-  maxMp: Int,
-  defense: Int,
-  turnsQueue: BlockingQueue<GameCharacter>
+    name: String,
+    maxHp: Int,
+    maxMp: Int,
+    defense: Int,
+    turnsQueue: BlockingQueue<GameCharacter>
 ) : AbstractPlayerCharacter(name, maxHp, defense, turnsQueue) {
     val maxMp = Require.Stat(maxMp, "Max MP") atLeast 0
     var currentMp: Int = maxMp
@@ -53,8 +53,13 @@ class BlackMage(
     }
 
     override fun hashCode() =
-      Objects.hash(BlackMage::class, name, maxHp, maxMp, defense)
+        Objects.hash(BlackMage::class, name, maxHp, maxMp, defense)
 
-    override fun toString() =
-      "BlackMage(currentMp=$currentMp, maxMp=$maxMp, maxHp=$maxHp, defense=$defense, name='$name')"
+    override fun toString() = "BlackMage { " +
+      "name: '$name' " +
+      "maxMp: $maxMp, " +
+      "maxHp: $maxHp, " +
+      "defense: $defense, " +
+      "currentMp: $currentMp, " +
+      "}"
 }

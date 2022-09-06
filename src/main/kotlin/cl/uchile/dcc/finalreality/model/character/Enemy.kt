@@ -20,20 +20,23 @@ import java.util.concurrent.BlockingQueue
  * @author ~Your name~
  */
 class Enemy(
-  name: String,
-  weight: Int,
-  maxHp: Int,
-  defense: Int,
-  turnsQueue: BlockingQueue<GameCharacter>
+    name: String,
+    weight: Int,
+    maxHp: Int,
+    defense: Int,
+    turnsQueue: BlockingQueue<GameCharacter>
 ) : AbstractCharacter(name, maxHp, defense, turnsQueue) {
-    val weight = Require.Stat(weight, "Weight") atLeast 0
+    val weight = Require.Stat(weight, "Weight") atLeast 1
 
     override fun equals(other: Any?) = when {
-        this === other         -> true
-        other !is Enemy        -> false
-        name != other.name     -> false
-        weight != other.weight -> false
-        else                   -> true
+        this === other                 -> true
+        other !is Enemy                -> false
+        hashCode() != other.hashCode() -> false
+        name != other.name             -> false
+        weight != other.weight         -> false
+        maxHp != other.maxHp           -> false
+        defense != other.defense       -> false
+        else                           -> true
     }
 
     override fun hashCode() = Objects.hash(Enemy::class, name, weight, maxHp, defense)

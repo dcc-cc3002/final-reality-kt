@@ -26,9 +26,11 @@ import java.util.concurrent.BlockingQueue
  * @author <a href="https://www.github.com/r8vnhill">R8V</a>
  * @author ~Your name~
  */
-class Knight(name: String, maxHp: Int, defense: Int,
-             turnsQueue: BlockingQueue<GameCharacter>) :
-  AbstractPlayerCharacter(name, maxHp, defense, turnsQueue) {
+class Knight(
+    name: String, maxHp: Int, defense: Int,
+    turnsQueue: BlockingQueue<GameCharacter>
+) :
+    AbstractPlayerCharacter(name, maxHp, defense, turnsQueue) {
     override fun equals(other: Any?) = when {
         this === other                 -> true
         other !is Knight               -> false
@@ -41,6 +43,10 @@ class Knight(name: String, maxHp: Int, defense: Int,
 
     override fun hashCode() = Objects.hash(Knight::class, name, maxHp, defense)
 
-    override fun toString() =
-      "Knight{maxHp=$maxHp, currentHp=$currentHp, defense=$defense, name=$name}"
+    override fun toString() = "Knight { " +
+      "name: '$name', " +
+      "maxHp: $maxHp, " +
+      "defense: $defense, " +
+      "currentHp: $currentHp " +
+      "}"
 }
