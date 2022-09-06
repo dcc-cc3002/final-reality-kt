@@ -12,7 +12,7 @@ import java.util.*
 import java.util.concurrent.BlockingQueue
 
 /**
- * A `Knight` is a type of Player Character that can equip `Sword`s, `Axe`s and
+ * A `Knight` is a type of [PlayerCharacter] that can equip `Sword`s, `Axe`s and
  * `Knife`s.
  *
  * @param name        the character's name
@@ -29,8 +29,7 @@ import java.util.concurrent.BlockingQueue
 class Knight(
     name: String, maxHp: Int, defense: Int,
     turnsQueue: BlockingQueue<GameCharacter>
-) :
-    AbstractPlayerCharacter(name, maxHp, defense, turnsQueue) {
+) : AbstractPlayerCharacter(name, maxHp, defense, turnsQueue) {
     override fun equals(other: Any?) = when {
         this === other                 -> true
         other !is Knight               -> false
