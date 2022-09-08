@@ -20,12 +20,12 @@ import java.util.*
  * @author ~Your name~
  */
 class Weapon(
-  private val name: String,
-  private val damage: Int,
+  val name: String,
+  val damage: Int,
   val weight: Int,
-  private val type: WeaponType
+  val type: WeaponType
 ) {
-
+    // ola
     override fun equals(other: Any?) = when {
         this === other                 -> true
         other !is Weapon               -> false

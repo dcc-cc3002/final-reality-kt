@@ -11,7 +11,7 @@ fun main() {
     val queue = LinkedBlockingQueue<GameCharacter>()
     for (i in 0 until 10) {
         // Gives a random speed to each character to generate different waiting times
-        val weapon = Weapon("", 0, Random.nextInt(50), WeaponType.KNIFE)
+        val weapon = Weapon("", 0, Random.nextInt(1, 50), WeaponType.KNIFE)
         val character = Thief("$i", 10, 10, queue)
         character.equip(weapon)
         character.waitTurn()
