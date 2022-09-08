@@ -8,7 +8,7 @@
 package cl.uchile.dcc.finalreality.model.character.player
 
 import cl.uchile.dcc.finalreality.model.character.GameCharacter
-import java.util.*
+import java.util.Objects
 import java.util.concurrent.BlockingQueue
 
 /**
@@ -48,6 +48,6 @@ class Engineer(
     override fun toString() = "Engineer { " +
       "name: '$name', " +
       "maxHp: $maxHp, " +
-      "defense=$defense " +
+      "defense: $defense " +
       "}"
 }

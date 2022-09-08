@@ -1,6 +1,6 @@
 package cl.uchile.dcc.finalreality.model
 
-import java.util.*
+import java.util.Objects
 
 /**
  * A class that holds all the information of a weapon.
@@ -20,12 +20,11 @@ import java.util.*
  * @author ~Your name~
  */
 class Weapon(
-  val name: String,
-  val damage: Int,
-  val weight: Int,
-  val type: WeaponType
+    val name: String,
+    val damage: Int,
+    val weight: Int,
+    val type: WeaponType
 ) {
-    // ola
     override fun equals(other: Any?) = when {
         this === other                 -> true
         other !is Weapon               -> false

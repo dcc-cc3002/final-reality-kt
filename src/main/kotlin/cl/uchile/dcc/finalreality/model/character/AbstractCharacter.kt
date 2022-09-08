@@ -23,10 +23,10 @@ import java.util.concurrent.TimeUnit
  * @author ~Your name~
  */
 abstract class AbstractCharacter(
-  override val name: String,
-  maxHp: Int,
-  defense: Int,
-  private val turnsQueue: BlockingQueue<GameCharacter>,
+    override val name: String,
+    maxHp: Int,
+    defense: Int,
+    private val turnsQueue: BlockingQueue<GameCharacter>,
 ) : GameCharacter {
 
     private lateinit var scheduledExecutor: ScheduledExecutorService
@@ -42,17 +42,17 @@ abstract class AbstractCharacter(
         when (this) {
             is PlayerCharacter -> {
                 scheduledExecutor.schedule(
-                  /* command = */ ::addToQueue,
-                  /* delay = */ (this.equippedWeapon.weight / 10).toLong(),
-                  /* unit = */ TimeUnit.SECONDS
+                    /* command = */ ::addToQueue,
+                    /* delay = */ (this.equippedWeapon.weight / 10).toLong(),
+                    /* unit = */ TimeUnit.SECONDS
                 )
             }
 
-            is Enemy           -> {
+            is Enemy -> {
                 scheduledExecutor.schedule(
-                  /* command = */ ::addToQueue,
-                  /* delay = */ (this.weight / 10).toLong(),
-                  /* unit = */ TimeUnit.SECONDS
+                    /* command = */ ::addToQueue,
+                    /* delay = */ (this.weight / 10).toLong(),
+                    /* unit = */ TimeUnit.SECONDS
                 )
             }
         }
