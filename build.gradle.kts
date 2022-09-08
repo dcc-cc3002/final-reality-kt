@@ -32,7 +32,3 @@ configure<KtlintExtension> {
         reporter(HTML)
     }
 }
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "18"
-}
