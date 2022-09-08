@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "cl.uchile.dcc.finalreality"
-version = "1.0-RC.1"
+version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -31,8 +31,4 @@ configure<KtlintExtension> {
     reporters {
         reporter(HTML)
     }
-}
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "18"
 }
