@@ -1,6 +1,5 @@
 @file:Suppress("SpellCheckingInspection")
 
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jlleitschuh.gradle.ktlint.KtlintExtension
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType.HTML
 
@@ -10,7 +9,7 @@ plugins {
 }
 
 group = "cl.uchile.dcc.finalreality"
-version = "1.0-SNAPSHOT"
+version = "1.0-RELEASE"
 
 repositories {
     mavenCentral()
